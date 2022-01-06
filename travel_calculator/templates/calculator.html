@@ -1,0 +1,113 @@
+{% extends 'travel_calculator_base.html' %}
+{% load static %}
+
+
+
+
+
+
+{% block title %}
+
+{% endblock title %}
+
+
+
+
+{% block content %}
+    <br>
+    <br>
+
+    <h1 class="connect">Tranportation system</h1>
+        <form class="mt-5" id="form-source-id">
+            <div class="ui selection dropdown" id="source_dropdown">
+              <input type="hidden" name="source">
+              <i class="dropdown icon"></i>
+              <div class="default text">Source</div>
+              <div class="menu" id="source-data-box">
+{#                  {% for data in source_data %}#}
+{#                        <div class="item" data-value="1">{{ data }}</div>#}
+{#                  {% endfor %}#}
+              </div>
+            </div>
+
+        </form>
+
+        <form class="mt-5" id="form-destination-id">
+
+                <div class="ui selection dropdown" id="destination_dropdown">
+                  <input type="hidden" name="Destination">
+                  <i class="dropdown icon"></i>
+                  <div class="default text">Destination</div>
+                  <div class="menu" id="destination-data-box">
+
+                  </div>
+                </div>
+
+            </form>
+
+    <div class="mt-5 not-visible" id="btn-box">
+        <button type="submit" class="ui primary button">Submit</button>
+    </div>
+
+
+    <br>
+
+
+
+    <label>select Route : </label>
+        <form class="mt-5" id="route-destination-id">
+
+                <div class="ui selection dropdown" id="route_dropdown">
+                  <input type="hidden" name="Routes">
+                  <i class="dropdown icon"></i>
+                  <div class="default text">Route</div>
+                  <div class="menu" id="route-data-box">
+
+                  </div>
+                </div>
+
+            </form>
+        <br>
+        <br>
+
+
+
+
+
+    <hr>
+    <h1 class="connect">Traditional away</h1>
+    <hr>
+    <br>
+
+
+
+
+
+
+    <br>
+
+
+
+
+    <br>
+    <hr>
+    <h1>return data</h1>
+
+
+
+
+
+
+    <hr>
+    <h1 class="connect">test section</h1>
+    <hr>
+    <br>
+
+
+
+
+
+
+{% endblock content %}
+
+

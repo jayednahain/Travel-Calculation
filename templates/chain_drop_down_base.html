@@ -1,0 +1,78 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+{#      jquery#}
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+      {#    semantic ui css  #}
+      <link>
+      <link href="{% static 'chain_dropdown/semanticUi/dropdown.min.css' %}" rel="stylesheet">
+      <link href="{% static 'chain_dropdown/semanticUi/transition.min.css' %}" rel="stylesheet">
+
+
+
+{#     semantic JS data#}
+      <script src={% static 'chain_dropdown/semanticUi/dropdown.min.js' %} defer></script>
+      <script src={% static 'chain_dropdown/semanticUi/transition.min.js' %} defer></script>
+
+
+
+{#     custome js#}
+      <script src={% static 'chain_dropdown/js/semantic.js' %} defer></script>
+      <script src={% static 'chain_dropdown/js/test_min.js' %} defer></script>
+      <script src={% static 'chain_dropdown/js/cost_data.js' %} defer></script>
+
+{#        food cost#}
+      <script src={% static 'chain_dropdown/js/food_data_reponse.js' %} defer></script>
+      <script src={% static 'chain_dropdown/js/food_cost_reponse.js' %} defer></script>
+
+{#      route cost#}
+      <script src={% static 'chain_dropdown/js/route_all_data_reponse.js' %} defer></script>
+      <script src={% static 'chain_dropdown/js/route_cost_reponse.js' %} defer></script>
+      <script src={% static 'chain_dropdown/js/route_source_destination.js' %} defer></script>
+
+
+
+
+{#     custom css data#}
+
+      <link rel="stylesheet" href="{% static 'chain_dropdown/css/custom.css' %}" rel="stylesheet">
+
+
+
+
+
+    <title>Hello, world!</title>
+  </head>
+
+  <body>
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

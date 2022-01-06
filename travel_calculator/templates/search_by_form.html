@@ -1,0 +1,70 @@
+{% extends 'travel_calculator_base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+
+{% endblock title %}
+
+
+
+{% block content %}
+    <form class="ui container mt-5" method="GET">
+        {% csrf_token %}
+        <br>
+        <hr>
+{#        source#}
+                <div class="ui selection dropdown route" id="source_route_dropdown">
+                      <input type="hidden" name="source_d">
+                      <i class="dropdown icon"></i>
+                      <div class="default text">Route</div>
+                      <div class="menu" id="route-data-box">
+                          {% for data in source_data %}
+                                <div class="item" data-value="{{ data.source_name }}">{{ data.source_name }}</div>
+                          {% endfor %}
+                      </div>
+                    </div>
+        {#        destination#}
+                <div class="ui selection dropdown route" id="desination_route_dropdown">
+                      <input type="hidden" name="destination_d">
+                          <i class="dropdown icon"></i>
+                          <div class="default text">Route</div>
+                              <div class="menu" id="route-data-box">
+                                 {% for data in destination_data %}
+                                       <div class="item" data-value="{{ data.destination_place }}">{{ data.destination_place }}</div>
+                                  {% endfor %}
+                              </div>
+                    </div>
+                    <br>
+        <button>Submit</button>
+    </form>
+    <br>
+    <hr>
+    <br>
+    {{ filtered_data }}
+
+    <hr>
+    <hr>
+
+            <label>Chose main route</label>
+                <form method="GET" action="{% url 'sub_route_find_link' %}" class="mt-5" id="form-route-id">
+                    {% csrf_token %}
+                    <div class="ui selection dropdown route" id="main_route_dropdown">
+                      <input type="hidden" name="main_route">
+                          <i class="dropdown icon"></i>
+                          <div class="default text">Route</div>
+                              <div class="menu" id="route-data-box">
+                                  {% for data in filtered_data %}
+                                        <div class="item" data-value="{{ data }}">{{ data }}</div>
+                                  {% endfor %}
+                              </div>
+                    </div>
+                <button>Submit</button>
+
+                </form>
+                <br>
+                <br>
+
+
+{% endblock content %}

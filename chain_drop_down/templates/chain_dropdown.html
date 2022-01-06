@@ -1,0 +1,243 @@
+{% extends 'chain_drop_down_base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+    <div class="cotainer">
+        <div class="row">
+            <h2 class="text-center alert alert-danger">Find travel cost</h2>
+{#            Source and destination#}
+            <div class="col border">
+                <form class="form-control mt-5" method="GET" id="source_and_destination_id">
+                    {% csrf_token %}
+                    <div class="ui selection dropdown" id="source_dropdown">
+                        <input type="hidden" name="source" id="source">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Source</div>
+                        <div class="menu" id="source-data-box">
+
+                        </div>
+                    </div>
+                    <div class="ui selection dropdown" id="destination_dropdown">
+                        <input type="hidden" name="destination" id="destination">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Source</div>
+                        <div class="menu" id="destination-data-box">
+
+                        </div>
+                    </div>
+                    <button class="btn btn-dark">Send Source & Destination</button>
+                </form>
+            </div>
+            <div class="col border">
+                <form class="form-control mt-5" method="GET" id="route_form_id">
+{#                    route#}
+                    <div class="ui selection dropdown" id="route_dropdown">
+                        <input type="hidden" name="route" id="route">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Route</div>
+                        <div class="menu" id="route-data-box">
+
+                        </div>
+                    </div>
+{#                    travell mode#}
+                    <div class="ui selection dropdown" id="travell_mode_dropdown">
+                        <input type="hidden" name="travell_mood" id="travell_mood">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Mood</div>
+                        <div class="menu" id="travell-mood-data-box">
+
+                        </div>
+                    </div>
+{#                    vechile class#}
+                    <div class="ui selection dropdown" id="vehicle_class_dropdown">
+                        <input type="hidden" name="vehicle_class" id="vehicle_class">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Class</div>
+                        <div class="menu" id="vehicle-class-data-box">
+
+                        </div>
+                    </div>
+{#                    company names#}
+                    <div class="ui selection dropdown" id="company_names_dropdown">
+                        <input type="hidden" name="company_names" id="company_names">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Company</div>
+                        <div class="menu" id="company-names-data-box">
+
+                        </div>
+                    </div>
+{#                    vechile comfort#}
+                    <div class="ui selection dropdown" id="vechile_comfort_dropdown">
+                        <input type="hidden" name="vechile_comfort" id="vechile_comfort">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Comfort</div>
+                        <div class="menu" id="vechile-comfort-data-box">
+
+                        </div>
+                    </div>
+                    <button id="route_cost_btn_id" class="btn btn-dark">Seer Route Cost</button>
+                </form>
+            </div>
+            <div class="col border">
+                <h1 id="cost_display">Cost display</h1>
+            </div>
+        </div>
+ddsadsadsadsad
+    </div>
+
+
+
+
+    <div class="cotainer">
+
+        <h2 class="text-center alert alert-danger">Find Hotel cost</h2>
+
+
+        <form class="form-control mt-5" method="GET" id="hotel_form_id">
+            {% csrf_token %}
+            <div class="row">
+            {#                  select place#}
+            <div class="col">
+                <div class="ui selection dropdown" id="hotel_place_dropdown">
+                    <input type="hidden" name="place">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Source</div>
+                    <div class="menu" id="place-data-box">
+
+                    </div>
+                </div>
+            </div>
+
+
+            {#                  ratings#}
+
+            <div class="col">
+                <div class="ui selection dropdown" id="raiting_dropdown">
+                    <input type="hidden" name="raiting">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">raiting</div>
+                    <div class="menu" id="raiting-data-box">
+
+                    </div>
+                </div>
+            </div>
+
+            {#                    hotel name#}
+
+            <div class="col">
+                <div class="ui selection dropdown" id="hotelName_dropdown">
+                    <input type="hidden" name="hotelName">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">hotelName</div>
+                    <div class="menu" id="hotelName-data-box">
+
+                    </div>
+                </div>
+            </div>
+
+            {#   category #}
+
+            <div class="col">
+                <div class="ui selection dropdown" id="category_dropdown">
+                    <input type="hidden" name="category">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">category</div>
+                    <div class="menu" id="category-data-box">
+                    </div>
+                </div>
+            </div>
+
+                <div class="col">
+                    <button class="btn btn-dark">Submit</button>
+                </div>
+
+
+                    <h1 class="col" id="hotel_cost_show_id"></h1>
+
+
+          </div>
+
+        </form>
+
+
+
+        <br>
+{#        Fooooooooood costtttttttttttttttttttttt#}
+        <h2 class="text-center alert alert-danger">Find Food cost</h2>
+
+
+        <form class="mt-5" method="GET" id="food_form_id">
+            {% csrf_token %}
+
+
+            <div class="row">
+                <div class="col">
+                    <div class="ui selection dropdown" id="food_place_dropdown">
+                        <input type="hidden" name="place">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Source</div>
+                        <div class="menu" id="food-place-box">
+
+                        </div>
+                    </div>
+                </div>
+
+{#                resturent name#}
+                <div class="col">
+                    <div class="ui selection dropdown" id="resturent_name_dropdown">
+                        <input type="hidden" name="resturent_name">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Resturent Name</div>
+                        <div class="menu" id="resturent-name-data-box">
+
+                        </div>
+                    </div>
+                </div>
+{#                      Food type name#}
+                <div class="col">
+                    <div class="ui selection dropdown" id="food_type_dropdown">
+                        <input type="hidden" name="foodtype">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Food Type</div>
+                        <div class="menu" id="foodtype-data-box">
+
+                        </div>
+                    </div>
+                </div>
+
+{#                            Food item names#}
+
+                <div class="col">
+                    <div class="ui selection dropdown" id="food_item_name_drop_down">
+                        <input type="hidden" name="itemName">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Item Name</div>
+                        <div class="menu" id="item-name-data-box">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <button class="btn btn-dark">See Cost</button>
+                </div>
+                <h1 class="col" id="food_cost_show_id"></h1>
+
+
+          </div>
+
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+{% endblock content %}
